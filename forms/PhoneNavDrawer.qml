@@ -9,10 +9,10 @@ import "qrc:/scripts/interface.js" as Interface
 
 Drawer{
     id: _phoneDrawer2
-    Overlay.modal: Rectangle {
-        color: "#aacfdbe7"
-    }
-
+//    Overlay.modal: Rectangle {
+//        color: "darkgrey"
+//    }
+    Material.theme: Material.Dark
     contentItem: ColumnLayout{
         id: _phoneDrawerCol
         width: parent.width

@@ -17,9 +17,9 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Quick LinguistTools Network R
 set(TS_FILES index_fr_BE.ts)
 
 set(PROJECT_SOURCES
-        main.cpp
-        qml.qrc
-        res.qrc
+        src/main.cpp
+        forms/qml.qrc
+        forms/res.qrc
         ${TS_FILES}
 )
 
