@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/file_upload_black_36dp.svg</file>
+        <file>icons/arrow_drop_down_black_36dp.svg</file>
+        <file>icons/menu_black_36dp.svg</file>
+        <file>icons/search_black_36dp.svg</file>
+        <file>images/felipe-gregate-Ph2KD5qr7VQ-unsplash.jpg</file>
+        <file>images/good-faces-DSj40n6beGk-unsplash.jpg</file>
+        <file>images/lagos-techie-IgUR1iX0mqM-unsplash.jpg</file>
+        <file>icons/chevron_left_black_48dp.svg</file>
+        <file>icons/chevron_right_black_48dp.svg</file>
+        <file>images/syllabusCover-1.png</file>
+        <file>images/syllabusCover-converted-1.png</file>
+        <file>images/example.png</file>
+        <file>icons/auto_stories_black_36dp.svg</file>
+        <file>icons/format_list_bulleted_black_36dp.svg</file>
+        <file>icons/favorite_black_36dp.svg</file>
+        <file>icons/copyright_black_36dp.svg</file>
+        <file>images/Section Image 2.png</file>
+    </qresource>
+</RCC>

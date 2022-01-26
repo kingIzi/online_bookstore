@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Constants.qml</file>
+        <file>DirectoryFontFolder.qml</file>
+        <file>fonts/Lora-Italic-VariableFont_wght.ttf</file>
+        <file>fonts/Lora-VariableFont_wght.ttf</file>
+        <file>NavBar.qml</file>
+        <file>ItemObjects.qml</file>
+        <file>scripts/interface.js</file>
+        <file>ViewsList.qml</file>
+        <file>CourseGrid.qml</file>
+        <file>LandingPageBanners.qml</file>
+        <file>PhoneNavDrawer.qml</file>
+        <file>PanelItem.qml</file>
+        <file>LoginForm.qml</file>
+        <file>LoginPage.qml</file>
+        <file>models/NavBarListModel.qml</file>
+        <file>models/BooksListModel.qml</file>
+        <file>BookPoster.qml</file>
+        <file>MainPage.qml</file>
+        <file>models/LandingPageListModel.qml</file>
+        <file>DeskTopNavBar.qml</file>
+        <file>MobileNavBar.qml</file>
+    </qresource>
+</RCC>
