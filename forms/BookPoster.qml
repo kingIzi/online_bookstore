@@ -94,6 +94,26 @@ ItemDelegate{
             }
         }
         Flow{
+            id: _subjectFlow
+            Layout.fillWidth: true
+            spacing: 4
+            Label{
+                id: _subjectLabel
+                text: "Subject:"
+                font: (_root.isLarge) ? Constants.fonts.h4 : Constants.fonts.p
+                wrapMode: "WordWrap"
+                Layout.fillWidth: true
+            }
+            Label{
+                id: _subj
+                text: _subject
+                font: (_root.isLarge) ? Constants.fonts.h4 : Constants.fonts.p
+                Material.foreground: "#fff"
+                wrapMode: "WordWrap"
+                Layout.fillWidth: true
+            }
+        }
+        Flow{
             id: _categorylow
             Layout.fillWidth: true
             Label{

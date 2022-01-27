@@ -23,5 +23,8 @@
         <file>models/LandingPageListModel.qml</file>
         <file>DeskTopNavBar.qml</file>
         <file>MobileNavBar.qml</file>
+        <file>models/CategoriesModel.qml</file>
+        <file>models/SubjectsListModel.qml</file>
+        <file>UploadBookForm.qml</file>
     </qresource>
 </RCC>

@@ -17,5 +17,6 @@
         <file>icons/favorite_black_36dp.svg</file>
         <file>icons/copyright_black_36dp.svg</file>
         <file>images/Section Image 2.png</file>
+        <file>images/upload.png</file>
     </qresource>
 </RCC>

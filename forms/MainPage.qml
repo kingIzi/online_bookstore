@@ -4,6 +4,7 @@ import QtQuick.Controls.Material 2.15
 import QtQuick.Layouts 1.15
 import Qt5Compat.GraphicalEffects
 import Constants 1.0
+import "models"
 import "qrc:/scripts/interface.js" as Interface
 
 Page{
@@ -30,6 +31,13 @@ Page{
                     }
                 }
             }
+            UploadBookForm{
+                id: _uploadPopup
+                width: (_root.isLarge) ? 500 : 350
+                height: 600
+                anchors.centerIn: parent
+            }
+
             PhoneNavDrawer{
                 id: _phoneDrawer
                 edge: "LeftEdge"

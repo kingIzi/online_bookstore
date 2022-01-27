@@ -25,6 +25,7 @@ ToolBar{
             padding: 20
             Layout.alignment: Qt.AlignRight
             Material.background: Material.color(Material.Teal,Material.Shade700)
+            onClicked: _uploadPopup.open()
         }
         RoundButton{
             id: _menutn

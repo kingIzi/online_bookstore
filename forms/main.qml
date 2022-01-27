@@ -22,13 +22,21 @@ ApplicationWindow{
     ItemObjects{
         id: _items
     }
+    BusyIndicator {
+        id: _busy
+        anchors.centerIn: parent
+        z: 5
+        Material.accent: Material.Teal
+        running: _appLoader.status == Loader.Loading
+    }
     Loader{
         id: _appLoader
         visible: true
         active: visible
         anchors.fill: parent
         source: "LoginPage.qml"
-        state: "Auth"
+        state: "Home"
+        asynchronous: true
         states: [
             State {
                 name: "Auth"

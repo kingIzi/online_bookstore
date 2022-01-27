@@ -6,8 +6,21 @@ import "models"
 import "qrc:/scripts/interface.js" as Interface
 
 RowLayout {
+    id: _loginRow
     width: parent.width
     anchors.fill: parent
+    Connections{
+        target: _requests
+        function onSignUpSuccessful(){
+            console.log("Sign up successful")
+            Interface.setState(_appLoader,"Home")
+        }
+        function onSignInSuccessful(){
+            console.log("Sign up successful")
+            Interface.setState(_appLoader,"Home")
+        }
+    }
+
     Item{
         Layout.fillWidth: true
         Layout.fillHeight: true
@@ -120,7 +133,7 @@ RowLayout {
                             MouseArea{
                                 anchors.fill: parent
                                 cursorShape: "PointingHandCursor"
-                                onClicked: Interface.setState(_appLoader,"Home")
+                                onClicked: _requests.signInWithEmailPassword(_usernameInput.text,_passwordInput.text)
                             }
                         }
                         ToolButton{
@@ -133,6 +146,11 @@ RowLayout {
                             background: Rectangle{
                                 color: Material.color(Material.Teal,Material.Shade700)
                                 border.width: 0
+                            }
+                            MouseArea{
+                                anchors.fill: parent
+                                cursorShape: "PointingHandCursor"
+                                onClicked: _requests.signUpWithEmailPassword(_usernameInput.text,_passwordInput.text)
                             }
                         }
                     }

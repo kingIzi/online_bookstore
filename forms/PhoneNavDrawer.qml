@@ -4,6 +4,7 @@ import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Qt5Compat.GraphicalEffects
 import Constants 1.0
+import "models"
 import "qrc:/scripts/interface.js" as Interface
 
 
@@ -82,13 +83,8 @@ Drawer{
                 navItem: "Categories"
             }
         }
-        ListModel {
+        CategoriesModel{
             id: _categoriesListModel
-            ListElement { key: "History"; value: 123 }
-            ListElement { key: "Applied Mathematics"; value: 456 }
-            ListElement { key: "Computer Science"; value: 789 }
-            ListElement { key: "Civil Engineering"; value: 789 }
-            ListElement { key: "Medecine"; value: 789 }
         }
         Component{
             id: _phoneCategories

@@ -11,12 +11,18 @@ Page {
     implicitHeight: height
     Component{
         id: _loginDesktopForm
-        LoginForm{}
+        LoginForm{
+            id: _loginForm
+        }
     }
     contentItem: Loader{
         anchors.fill: parent
         visible: true
         active: visible
-        sourceComponent: _loginDesktopForm
+        //sourceComponent: _loginDesktopForm
+        sourceComponent: StackView{
+            id: _loginStack
+            initialItem: _loginDesktopForm
+        }
     }
 }

@@ -77,13 +77,8 @@ ToolBar{
                             currentIndex: _navItem.highlightedIndex
                         }
                     }
-                    ListModel {
+                    CategoriesModel{
                         id: _categoriesListModel
-                        ListElement { key: "History"; value: 123 }
-                        ListElement { key: "Applied Mathematics"; value: 456 }
-                        ListElement { key: "Computer Science"; value: 789 }
-                        ListElement { key: "Civil Engineering"; value: 789 }
-                        ListElement { key: "Medecine"; value: 789 }
                     }
                     model: (_navItem.displayText === "Categories") ? _categoriesListModel : []
                     delegate: ItemDelegate{
@@ -141,6 +136,11 @@ ToolBar{
                     icon.color: "#fff"
                     Material.background: Material.color(Material.Teal,Material.Shade700)
                     Layout.rightMargin: 10
+                    MouseArea{
+                        anchors.fill: parent
+                        cursorShape: "PointingHandCursor"
+                        onClicked: _uploadPopup.open()
+                    }
                 }
             }
         }

@@ -8,7 +8,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Core Quick LinguistTools Network REQUIRED)
@@ -22,6 +22,13 @@ set(PROJECT_SOURCES
         forms/res.qrc
         ${TS_FILES}
 )
+
+set(SOURCE_FILES src/SyApp.cpp src/SyRequests.cpp)
+set(HEADER_FILES include/SyApp.h include/SyRequests.h)
+
+add_library(implementation ${SOURCE_FILES} ${HEADER_FILES})
+
+include_directories(include/)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(index
@@ -53,7 +60,10 @@ endif()
 target_compile_definitions(index
   PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
 target_link_libraries(index
-  PRIVATE Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Network)
+  PUBLIC implementation)
+
+target_link_libraries(implementation PUBLIC Qt${QT_VERSION_MAJOR}::Quick Qt${QT_VERSION_MAJOR}::Qml Qt${QT_VERSION_MAJOR}::Network
+    Qt${QT_VERSION_MAJOR}::Core)
 
 set_target_properties(index PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
