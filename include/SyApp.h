@@ -7,7 +7,7 @@
 class SyApp
 {
 public:
-    SyApp(int argc, char *argv[]);
+    SyApp(int& argc, char *argv[]);
     ~SyApp();
     void init();
     int exec();

@@ -1,6 +1,7 @@
 import QtQuick 2.15
 import QtQuick.Controls.Material 2.15
 import QtQuick.Layouts 1.15
+import Qt5Compat.GraphicalEffects
 import Constants 1.0
 import "models"
 import "qrc:/scripts/interface.js" as Interface
@@ -74,6 +75,39 @@ RowLayout {
                             Layout.fillWidth: true
                             Layout.margins: 10
                             Material.accent: Material.color(Material.Teal)
+                            leftPadding: (text.length === 0) ? 32 : 0
+                            Image{
+                                id: personImg
+                                visible: (_usernameInput.text.length === 0)
+                                source: Constants.icons.person
+                                fillMode: Image.PreserveAspectFit
+                                anchors.left: parent.left
+                                anchors.verticalCenter: parent.verticalCenter
+                                ColorOverlay{
+                                    anchors.fill: personImg
+                                    source :personImg
+                                    color:"#fff"
+                                    transform:rotation
+                                }
+                            }
+                            Image{
+                                id: closeImg
+                                source: Constants.icons.close
+                                visible: (_usernameInput.text.length > 0)
+                                fillMode: Image.PreserveAspectFit
+                                anchors.right: parent.right
+                                anchors.verticalCenter: parent.verticalCenter
+                                ColorOverlay{
+                                    anchors.fill: closeImg
+                                    source: closeImg
+                                    color: "#fff"
+                                    transform: rotation
+                                }
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: _usernameInput.text = ""
+                                }
+                            }
                         }
                         TextField{
                             id: _passwordInput
@@ -81,9 +115,43 @@ RowLayout {
                             placeholderText: "Password"
                             Layout.fillWidth: true
                             Layout.margins: 10
-                            echoMode: "Password"
+                            echoMode: (!visibilityImg.isVisible) ? "Password" : "Normal"
                             Material.foreground: Material.color(Material.Grey,Material.Shade100)
                             Material.accent: Material.color(Material.Teal)
+                            leftPadding: (text.length === 0) ? 32 : 0
+                            rightPadding: 32
+                            Image{
+                                id: lockImg
+                                visible: (_passwordInput.text.length === 0)
+                                source: Constants.icons.lock
+                                fillMode: Image.PreserveAspectFit
+                                anchors.left: parent.left
+                                anchors.verticalCenter: parent.verticalCenter
+                                ColorOverlay{
+                                    anchors.fill: lockImg
+                                    source :lockImg
+                                    color:"#fff"
+                                    transform:rotation
+                                }
+                            }
+                            Image{
+                                id: visibilityImg
+                                property bool isVisible: false
+                                source: (!isVisible) ? Constants.icons.visibilityOff : Constants.icons.visibility
+                                fillMode: Image.PreserveAspectFit
+                                anchors.right: parent.right
+                                anchors.verticalCenter: parent.verticalCenter
+                                ColorOverlay{
+                                    anchors.fill: visibilityImg
+                                    source: visibilityImg
+                                    color: "#fff"
+                                    transform: rotation
+                                }
+                                MouseArea{
+                                    anchors.fill: parent
+                                    onClicked: visibilityImg.isVisible = !visibilityImg.isVisible
+                                }
+                            }
                         }
                         Item{
                             Layout.fillWidth: true

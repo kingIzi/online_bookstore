@@ -60,6 +60,11 @@ QtObject {
         readonly property url upload: "qrc:/icons/file_upload_black_36dp.svg"
         readonly property url chevronRight: "qrc:/icons/chevron_right_black_48dp.svg"
         readonly property url chevronLeft: "qrc:/icons/chevron_left_black_48dp.svg"
+        readonly property url lock: "qrc:/icons/lock_black_24dp.svg"
+        readonly property url person: "qrc:/icons/person_black_24dp.svg"
+        readonly property url visibility: "qrc:/icons/visibility_black_24dp.svg"
+        readonly property url visibilityOff: "qrc:/icons/visibility_off_black_24dp.svg"
+        readonly property url close: "qrc:/icons/close_black_24dp.svg"
     }
 
     readonly property QtObject images: QtObject{

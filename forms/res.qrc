@@ -18,5 +18,10 @@
         <file>icons/copyright_black_36dp.svg</file>
         <file>images/Section Image 2.png</file>
         <file>images/upload.png</file>
+        <file>icons/lock_black_24dp.svg</file>
+        <file>icons/person_black_24dp.svg</file>
+        <file>icons/visibility_black_24dp.svg</file>
+        <file>icons/visibility_off_black_24dp.svg</file>
+        <file>icons/close_black_24dp.svg</file>
     </qresource>
 </RCC>

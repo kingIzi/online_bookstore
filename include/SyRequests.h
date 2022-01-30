@@ -26,8 +26,7 @@ class SyRequests : public QObject
     Q_OBJECT
 public:
     explicit SyRequests(QObject *parent = nullptr);
-    void GET(const QUrl& url);
-    Reply* POST(const QUrl& url,const QJsonDocument& payLoad,const char* contentTypeHeader = nullptr);
+    Q_INVOKABLE void openFileDialog();
 signals:
     void signInSuccessful();
     void signUpSuccessful();
@@ -35,6 +34,8 @@ public slots:
     void signUpWithEmailPassword(const QString& username,const QString& password);
     void signInWithEmailPassword(const QString& username,const QString& password);
 private:
+    void GET(const QUrl& url);
+    Reply* POST(const QUrl& url,const QJsonDocument& payLoad,const char* contentTypeHeader = nullptr);
     void makeSignUpWithEmailPasswordRequest();
     void makeSignInWithEmailPasswordRequest();
 private:

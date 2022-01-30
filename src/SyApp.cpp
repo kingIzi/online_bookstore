@@ -4,8 +4,8 @@
 #include <QQmlContext>
 
 
-SyApp::SyApp(int argc, char *argv[]) :
-    _app(argc,argv)
+SyApp::SyApp(int& argc, char *argv[])
+    :  _app(argc,argv)
 {
     if (qEnvironmentVariableIsEmpty("QTGLESSTREAM_DISPLAY")) {
         qputenv("QT_QPA_EGLFS_PHYSICAL_WIDTH", QByteArray("213"));

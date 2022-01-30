@@ -1,11 +1,28 @@
 #include "SyRequests.h"
 #include <QJsonObject>
+#include <QFileDialog>
+#include <QString>
+#include <QByteArray>
+#include <stdexcept>
+
 
 
 //initialze class members
 SyRequests::SyRequests(QObject *parent) : QObject(parent)
 {
     this->_manager = std::make_unique<Manager>(this);
+}
+
+//open file dialog
+void SyRequests::openFileDialog()
+{
+    try {
+        QFileDialog::getOpenFileContent(tr("Image Files (*.png *.jpg *.jpeg)"),[](const QString& fileName,const QByteArray& bytes){
+            qDebug() << bytes;
+        });
+    }  catch (std::runtime_error& e) {
+        qDebug() << e.what();
+    }
 }
 
 //Perform GET

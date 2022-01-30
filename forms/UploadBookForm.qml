@@ -13,7 +13,6 @@ Popup{
         property: "radius"
         value: 10
     }
-
     contentItem: ColumnLayout{
         Label{
             id: _uploadText
@@ -167,6 +166,7 @@ Popup{
                                 MouseArea{
                                     anchors.fill: parent
                                     cursorShape: "PointingHandCursor"
+                                    onClicked: _requests.openFileDialog()
                                 }
                             }
                         }
